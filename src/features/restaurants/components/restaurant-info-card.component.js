@@ -3,20 +3,19 @@ import { Card, Paragraph } from "react-native-paper";
 import styled from "styled-components/native";
 
 const Title = styled.Text`
-  padding: 0px;
+  padding: ${(props) => props.theme.space[0]};
   color: ${(props) => props.theme.colors.ui.primary};
-  font-size: 24px;
-  font-weight: bold;
-  line-height: 36px;
+  font-size: ${(props) => props.theme.fontSizes.title};
+  font-weight: ${(props) => props.theme.fontWeights.bold};
+  line-height: ${(props) => props.theme.lineHeights.title};
 `;
 
 const RestaurantCard = styled(Card)`
-  padding: 2px;
+  padding: ${(props) => props.theme.space[3]};
 `;
 
 const RestaurantCardCover = styled(Card.Cover)`
-  padding: 2px;
-  background-color: gray;
+  padding: ${(props) => props.theme.space[0]};
 `;
 
 const RestaurantParagraph = styled(Paragraph)`

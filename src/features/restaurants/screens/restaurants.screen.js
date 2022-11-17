@@ -5,13 +5,13 @@ import styled from "styled-components/native";
 import { RestaurantInfoCard } from "../components/restaurant-info-card.component";
 
 const SearchContainer = styled(View)`
-  padding: 6px;
+  padding: ${(props) => props.theme.space[2]};
 `;
 
 const RestaurantList = styled(View)`
-  padding: 26px;
+  padding: ${(props) => props.theme.space[2]};
   flex: 1;
-  background-color: white;
+  background-color: ${(props) => props.theme.colors.ui.quaternary};
 `;
 
 const SafeArea = styled(SafeAreaView)`
