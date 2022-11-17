@@ -26,8 +26,6 @@ export const RestaurantsScreen = () => (
     </SearchContainer>
     <RestaurantList>
       <RestaurantInfoCard />
-      <RestaurantInfoCard />
-      <RestaurantInfoCard />
     </RestaurantList>
   </SafeArea>
 );

@@ -4,7 +4,7 @@ import styled from "styled-components/native";
 
 const Title = styled.Text`
   padding: 0px;
-  color: red;
+  color: ${(props) => props.theme.colors.ui.primary};
   font-size: 24px;
   font-weight: bold;
   line-height: 36px;
@@ -17,6 +17,10 @@ const RestaurantCard = styled(Card)`
 const RestaurantCardCover = styled(Card.Cover)`
   padding: 2px;
   background-color: gray;
+`;
+
+const RestaurantParagraph = styled(Paragraph)`
+  color: ${(props) => props.theme.colors.ui.secondary};
 `;
 
 export const RestaurantInfoCard = ({ restaurant = {} }) => {
@@ -36,8 +40,8 @@ export const RestaurantInfoCard = ({ restaurant = {} }) => {
       <Card.Content>
         <RestaurantCardCover key={name} source={{ uri: photos[0] }} />
         <Title>{name}</Title>
-        <Paragraph>{address}</Paragraph>
-        <Paragraph>Rating {rating} stars</Paragraph>
+        <RestaurantParagraph>{address}</RestaurantParagraph>
+        <RestaurantParagraph>Rating {rating} stars</RestaurantParagraph>
       </Card.Content>
     </RestaurantCard>
   );
