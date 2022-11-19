@@ -1,9 +1,12 @@
 import React from "react";
+import { View } from "react-native";
 import { Card, Paragraph } from "react-native-paper";
 import styled from "styled-components/native";
+import { SvgXml } from "react-native-svg";
+import star from "../../../assets/star";
 
 const Title = styled.Text`
-  padding: ${(props) => props.theme.space[0]};
+  font-family: ${(props) => props.theme.fonts.heading};
   color: ${(props) => props.theme.colors.ui.primary};
   font-size: ${(props) => props.theme.fontSizes.title};
   font-weight: ${(props) => props.theme.fontWeights.bold};
@@ -11,15 +14,27 @@ const Title = styled.Text`
 `;
 
 const RestaurantCard = styled(Card)`
-  padding: ${(props) => props.theme.space[3]};
-`;
-
-const RestaurantCardCover = styled(Card.Cover)`
   padding: ${(props) => props.theme.space[0]};
 `;
 
-const RestaurantParagraph = styled(Paragraph)`
+const RestaurantCardCover = styled(Card.Cover)`
+  padding: ${(props) => props.theme.space[1]};
+`;
+
+const Address = styled(Paragraph)`
   color: ${(props) => props.theme.colors.ui.secondary};
+  font-family: ${(props) => props.theme.fonts.body};
+  font-size: ${(props) => props.theme.fontSizes.body};
+`;
+
+const Rating = styled(Paragraph)`
+  color: ${(props) => props.theme.colors.ui.secondary};
+  font-family: ${(props) => props.theme.fonts.body};
+  font-size: ${(props) => props.theme.fontSizes.body};
+`;
+
+const Info = styled(View)`
+  padding: ${(props) => props.theme.space[3]};
 `;
 
 export const RestaurantInfoCard = ({ restaurant = {} }) => {
@@ -38,9 +53,14 @@ export const RestaurantInfoCard = ({ restaurant = {} }) => {
     <RestaurantCard elevation={50}>
       <Card.Content>
         <RestaurantCardCover key={name} source={{ uri: photos[0] }} />
-        <Title>{name}</Title>
-        <RestaurantParagraph>{address}</RestaurantParagraph>
-        <RestaurantParagraph>Rating {rating} stars</RestaurantParagraph>
+        <Info>
+          <Title>{name}</Title>
+          <SvgXml xml={star} width={20} height={20} />
+          <SvgXml xml={star} width={20} height={20} />
+          <SvgXml xml={star} width={20} height={20} />
+          <Address>{address}</Address>
+          <Rating>Rating {rating} stars</Rating>
+        </Info>
       </Card.Content>
     </RestaurantCard>
   );
