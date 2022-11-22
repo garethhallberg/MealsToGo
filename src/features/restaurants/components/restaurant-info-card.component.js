@@ -5,6 +5,7 @@ import styled from "styled-components/native";
 import { SvgXml } from "react-native-svg";
 import star from "../../../assets/star";
 import open from "../../../assets/open";
+import { Spacer } from "../../../components/spacer/spacer.component";
 
 const Title = styled.Text`
   font-family: ${(props) => props.theme.fonts.heading};
@@ -23,12 +24,6 @@ const RestaurantCardCover = styled(Card.Cover)`
 `;
 
 const Address = styled(Paragraph)`
-  color: ${(props) => props.theme.colors.ui.secondary};
-  font-family: ${(props) => props.theme.fonts.body};
-  font-size: ${(props) => props.theme.fontSizes.body};
-`;
-
-const RatingPara = styled(Paragraph)`
   color: ${(props) => props.theme.colors.ui.secondary};
   font-family: ${(props) => props.theme.fonts.body};
   font-size: ${(props) => props.theme.fontSizes.body};
@@ -63,7 +58,7 @@ export const RestaurantInfoCard = ({ restaurant = {} }) => {
       "https://www.foodiesfeed.com/wp-content/uploads/2022/07/pizza-with-pineapple-and-thin-crust.jpg",
     ],
     address = "100 Random St",
-    isOpenNow = false,
+    isOpenNow = true,
     rating = 4.5,
     isClosedTemporarily = true,
   } = restaurant;
@@ -76,20 +71,23 @@ export const RestaurantInfoCard = ({ restaurant = {} }) => {
         <RestaurantCardCover key={name} source={{ uri: photos[0] }} />
         <Info>
           <Title>{name}</Title>
-          <Section>
+          <Section key="1">
             <Rating>
               {ratingArray.map(() => (
                 <SvgXml xml={star} width={20} height={20} />
               ))}
             </Rating>
             <SectionEnd>
-              {isClosedTemporarily && (
-                <Text variant="label" style={{ color: "red"}}>
-                  CLOSED TEMPORARILY
-                </Text>
-              )}
-              <View style={{ paddingLeft: 16 }} />
-              {isOpenNow && <SvgXml xml={open} width={20} height={20} />}
+              <Spacer position="left" size="large">
+                {isClosedTemporarily && (
+                  <Text variant="label" style={{ color: "red" }}>
+                    CLOSED TEMPORARILY
+                  </Text>
+                )}
+              </Spacer>
+              <Spacer position="top" size="large">
+                {isOpenNow && <SvgXml xml={open} width={20} height={20} />}
+              </Spacer>
             </SectionEnd>
           </Section>
           <Address>{address}</Address>
