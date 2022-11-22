@@ -85,7 +85,7 @@ export const RestaurantInfoCard = ({ restaurant = {} }) => {
                   </Text>
                 )}
               </Spacer>
-              <Spacer position="top" size="large">
+              <Spacer position="left" size="large">
                 {isOpenNow && <SvgXml xml={open} width={20} height={20} />}
               </Spacer>
             </SectionEnd>
