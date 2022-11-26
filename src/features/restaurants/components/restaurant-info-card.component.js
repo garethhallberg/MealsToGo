@@ -1,6 +1,5 @@
 import React from "react";
 import { SvgXml } from "react-native-svg";
-import styled from "styled-components";
 import { Card } from "react-native-paper";
 
 import { Text } from "../../../components/typography/text.component";
@@ -39,7 +38,7 @@ export const RestaurantInfoCard = ({ restaurant = {} }) => {
         <RestaurantCardCover key={name} source={{ uri: photos[0] }} />
         <Info>
           <Text variant="label">{name}</Text>
-          <Section key="1">
+          <Section>
             <Rating>
               {ratingArray.map(() => (
                 <SvgXml xml={star} width={20} height={20} />
@@ -55,7 +54,7 @@ export const RestaurantInfoCard = ({ restaurant = {} }) => {
                 {isOpenNow && <SvgXml xml={open} width={20} height={20} />}
               </Spacer>
               <Spacer position="left" size="large">
-                <Icon source={{ uri: icon}} />
+                <Icon source={{ uri: icon }} />
               </Spacer>
             </SectionEnd>
           </Section>

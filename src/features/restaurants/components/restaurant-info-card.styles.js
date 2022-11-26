@@ -8,7 +8,7 @@ export const Icon = styled.Image`
 `;
 
 export const RestaurantCard = styled(Card)`
-  padding: ${(props) => props.theme.space[0]};
+  margin-bottom: ${(props) => props.theme.space[3]};
 `;
 
 export const RestaurantCardCover = styled(Card.Cover)`
