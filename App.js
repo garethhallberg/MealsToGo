@@ -15,6 +15,7 @@ import { theme } from "./src/infrastructure/theme";
 import { RestaurantsScreen } from "./src/features/restaurants/screens/restaurants.screen";
 import { SafeArea } from "./src/components/utility/safe-area.component";
 import Ionicons from "react-native-vector-icons/Ionicons";
+import { restaurantRequest } from "./src/services/restaurants/restaurants.service";
 
 const Tab = createBottomTabNavigator();
 const TAB_ICON = {
@@ -35,7 +36,7 @@ const Map = () => (
 );
 
 const createScreenOptions = ({ route }) => {
-  const iconName = TAB_ICON[route.name]
+  const iconName = TAB_ICON[route.name];
   return {
     tabBarIcon: ({ size, color }) => (
       <Ionicons name={iconName} size={size} color={color} />
