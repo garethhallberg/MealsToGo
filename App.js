@@ -4,6 +4,7 @@ import { Text } from "react-native";
 import { ThemeProvider } from "styled-components/native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import Ionicons from "react-native-vector-icons/Ionicons";
 
 import {
   useFonts as useOswald,
@@ -14,8 +15,7 @@ import { useFonts as useLato, Lato_400Regular } from "@expo-google-fonts/lato";
 import { theme } from "./src/infrastructure/theme";
 import { RestaurantsScreen } from "./src/features/restaurants/screens/restaurants.screen";
 import { SafeArea } from "./src/components/utility/safe-area.component";
-import Ionicons from "react-native-vector-icons/Ionicons";
-import { restaurantRequest } from "./src/services/restaurants/restaurants.service";
+import { RestaurantsContextProvider } from "./src/services/restaurants/restaurants.context";
 
 const Tab = createBottomTabNavigator();
 const TAB_ICON = {
@@ -75,12 +75,14 @@ export default function App() {
 
   return (
     <>
-      <ThemeProvider theme={theme}>
-        <NavigationContainer>
-          <MyTabs />
-        </NavigationContainer>
-      </ThemeProvider>
-      <ExpoStatusBar style="auto" />
+      <RestaurantsContextProvider>
+        <ThemeProvider theme={theme}>
+          <NavigationContainer>
+            <MyTabs />
+          </NavigationContainer>
+        </ThemeProvider>
+        <ExpoStatusBar style="auto" />
+      </RestaurantsContextProvider>
     </>
   );
 }
