@@ -27,7 +27,7 @@ export const RestaurantsContextProvider = ({ children }) => {
         });
     }, 2000);
   };
-  console.log("books" + retrieveRestaurants);
+
   useEffect(() => {
     retrieveRestaurants();
   }, []);

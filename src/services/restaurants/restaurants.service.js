@@ -15,8 +15,7 @@ export const restaurantsTransform = ({ results = [] }) => {
   const mappedResults = results.map((restaurant) => {
     restaurant.photos = restaurant.photos.map((p) => {
       const image = mockImages[1];
-        // mockImages[Math.cell(Math.random() * (mockImages.length - 1))];
-      console.log("image: " + image);
+      // mockImages[Math.cell(Math.random() * (mockImages.length - 1))];
       return image;
     });
     return {
@@ -25,6 +24,5 @@ export const restaurantsTransform = ({ results = [] }) => {
       isClosedTemporarily: restaurant.businessStatus === "CLOSED_TEMPORARILY",
     };
   });
-  console.log(JSON.stringify(mappedResults));
   return camelize(mappedResults);
 };

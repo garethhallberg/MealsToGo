@@ -16,6 +16,7 @@ import { theme } from "./src/infrastructure/theme";
 import { RestaurantsScreen } from "./src/features/restaurants/screens/restaurants.screen";
 import { SafeArea } from "./src/components/utility/safe-area.component";
 import { RestaurantsContextProvider } from "./src/services/restaurants/restaurants.context";
+import { LocationContextProvider } from "./src/services/restaurants/location/location.context";
 
 const Tab = createBottomTabNavigator();
 const TAB_ICON = {
@@ -75,14 +76,16 @@ export default function App() {
 
   return (
     <>
-      <RestaurantsContextProvider>
-        <ThemeProvider theme={theme}>
-          <NavigationContainer>
-            <MyTabs />
-          </NavigationContainer>
-        </ThemeProvider>
-        <ExpoStatusBar style="auto" />
-      </RestaurantsContextProvider>
+      <ThemeProvider theme={theme}>
+        <LocationContextProvider>
+          <RestaurantsContextProvider>
+            <NavigationContainer>
+              <MyTabs />
+            </NavigationContainer>
+          </RestaurantsContextProvider>
+        </LocationContextProvider>
+      </ThemeProvider>
+      <ExpoStatusBar style="auto" />
     </>
   );
 }
