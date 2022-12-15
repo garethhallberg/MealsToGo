@@ -4,8 +4,8 @@ export const locations = {
       {
         geometry: {
           location: {
-            lat: 51.2132707,
-            lng: 4.4168305,
+            lng: 4.402464,
+            lat: 51.219448,
           },
           viewport: {
             northeast: {
@@ -18,51 +18,43 @@ export const locations = {
             },
           },
         },
-      }
-    ],
-  },
-  chicago: {
-    results: [
-      {
-        geometry: {
-          location: {
-            lat: 41.88907469999999,
-            lng: -87.62988229999999,
-          },
-          viewport: {
-            northeast: {
-              lat: 41.89049998029149,
-              lng: -87.62853766970849,
-            },
-            southwest: {
-              lat: 41.8878020197085,
-              lng: -87.6312356302915,
-            },
-          },
-        },
-      }
+      },
     ],
   },
   "san francisco": {
     results: [
       {
         geometry: {
+          location: { lat: 37.7749295, lng: -122.4194155 },
+          viewport: {
+            northeast: { lat: 37.812, lng: -122.3482 },
+            southwest: { lat: 37.70339999999999, lng: -122.527 },
+          },
+        },
+      },
+    ],
+    status: "OK",
+  },
+  chicago: {
+    results: [
+      {
+        geometry: {
           location: {
-            lat: 37.77361,
-            lng: -122.421622,
+            lng: -87.629799,
+            lat: 41.878113,
           },
           viewport: {
             northeast: {
-              lat: 37.7750214302915,
-              lng: -122.4202089697085,
+              lat: 41.88758823029149,
+              lng: -87.6194830697085,
             },
             southwest: {
-              lat: 37.7723234697085,
-              lng: -122.4229069302915,
+              lat: 41.88489026970849,
+              lng: -87.6221810302915,
             },
           },
         },
-      }
+      },
     ],
   },
   toronto: {
@@ -70,8 +62,8 @@ export const locations = {
       {
         geometry: {
           location: {
-            lat: 43.6465623,
-            lng: -79.374578,
+            lng: -79.383186,
+            lat: 43.653225,
           },
           viewport: {
             northeast: {
@@ -84,7 +76,7 @@ export const locations = {
             },
           },
         },
-      }
+      },
     ],
   },
 };

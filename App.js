@@ -52,6 +52,12 @@ function MyTabs() {
       tabBarOptions={{
         activeTintColor: "tomato",
         inactiveTintColor: "gray",
+        style: [
+          {
+            display: "flex",
+          },
+          null,
+        ],
       }}
     >
       <Tab.Screen name="Restaurants" component={RestaurantsScreen} />
