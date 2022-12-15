@@ -21,7 +21,7 @@ export const Search = () => {
           search(searchKeyword);
         }}
         onChangeText={(text) => {
-          setSearchKeyword(searchKeyword);
+          setSearchKeyword(text);
         }}
       />
     </SearchContainer>
