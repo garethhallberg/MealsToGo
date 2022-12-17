@@ -8,7 +8,6 @@ import { Spacer } from "../../../components/spacer/spacer.component";
 import { SafeArea } from "../../../components/utility/safe-area.component";
 import { Search } from "../components/search.component";
 import { RestaurantsContext } from "../../../services/restaurants/restaurants.context";
-import { NavigationContainer } from "@react-navigation/native";
 
 const RestaurantList = styled(FlatList).attrs({
   contentContainerStyle: {
