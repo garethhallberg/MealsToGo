@@ -26,10 +26,6 @@ export const RestaurantsNavigator = () => {
         name="RestaurantDetailScreen"
         component={RestaurantDetailScreen}
       />
-      <RestaurantStack.Screen
-        name="RestaurantGareth"
-        component={() => <Text>Hello Gareth</Text>}
-      />
     </RestaurantStack.Navigator>
   );
 };
