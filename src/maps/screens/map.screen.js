@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Text } from "react-native";
 import MapView from "react-native-maps";
+import { Marker } from "react-native-maps";
 import styled from "styled-components/native";
 
 import { RestaurantsContext } from "../../services/restaurants/restaurants.context";
@@ -27,6 +28,33 @@ export const MapScreen = () => {
     setLatDelta(latDeltaSum);
   }, [location, viewport]);
 
+  var markers = [
+    {
+      latitude: 37.7829132,
+      longitude: -122.4188995,
+      title: "Foo Place",
+      subtitle: "1234 Foo Drive",
+    },
+  ];
+
+  // return (
+  //   <Map
+  //     region={{
+  //       latitude: lat,
+  //       longitude: lng,
+  //       latitudeDelta: latDelta,
+  //       longitudeDelta: 0.02,
+  //     }}
+  //     annotations={markers}
+  //   >
+  //     <Marker
+  //       coordinate={{ latitude: 37.78825, longitude: -122.4324 }}
+  //       title={"title"}
+  //       description={"description"}
+  //     />
+  //   </Map>
+  // );
+
   return (
     <>
       <SearchMap />
@@ -40,15 +68,14 @@ export const MapScreen = () => {
       >
         {restaurants.map((restaurant) => {
           return (
-            <Text>{restaurant.name}</Text>
-            // <MapView.Marker
-            //   key={restaurant.name}
-            //   title={restaurant.name}
-            //   coordinate={{
-            //     latitude: restaurant.geometry.location.lat,
-            //     longitude: restaurant.geometry.location.lng,
-            //   }}
-            // />
+            <Marker
+              key={restaurant.name}
+              title={restaurant.name}
+              coordinate={{
+                latitude: restaurant.geometry.location.lat,
+                longitude: restaurant.geometry.location.lng,
+              }}
+            />
           );
         })}
       </Map>
